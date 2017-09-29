@@ -8,6 +8,28 @@
  */
 
 
+namespace Modules\Pages\Models{
+/**
+ * Modules\Pages\Models\Page
+ *
+ * @property int $id
+ * @property string $title
+ * @property string $slug
+ * @property string|null $description
+ * @property string $content
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Pages\Models\Page whereContent($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Pages\Models\Page whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Pages\Models\Page whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Pages\Models\Page whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Pages\Models\Page whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Pages\Models\Page whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Pages\Models\Page whereUpdatedAt($value)
+ */
+	class Page extends \Eloquent {}
+}
+
 namespace Modules\Users\Models{
 /**
  * Modules\Users\Models\User
