@@ -1,6 +1,6 @@
 <?php
 /**
- * A helper file for your Eloquent Models
+ * A helper file for your Eloquent Entities
  * Copy the phpDocs from this file to the correct Model,
  * And remove them from this file, to prevent double declarations.
  *
@@ -10,7 +10,7 @@
 
 namespace Modules\Users\Models{
 /**
- * Modules\Users\Models\User
+ * Modules\Users\Entities\User
  *
  * @property int $id
  * @property string $name
@@ -37,7 +37,7 @@ namespace Modules\Users\Models{
 
 namespace Modules\Users\Models{
 /**
- * Modules\Users\Models\Permission
+ * Modules\Users\Entities\Permission
  *
  * @property int $id
  * @property string $name
@@ -58,7 +58,7 @@ namespace Modules\Users\Models{
 
 namespace Modules\Users\Models{
 /**
- * Modules\Users\Models\Role
+ * Modules\Users\Entities\Role
  *
  * @property int $id
  * @property string $name
