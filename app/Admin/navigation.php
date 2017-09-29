@@ -27,7 +27,6 @@ return [
 		'icon'  => 'fa fa-dashboard',
 		'url'   => route('admin.dashboard'),
 	],
-
 	[
 		'title' => 'Information',
 		'icon'  => 'fa fa-exclamation-circle',
@@ -46,7 +45,12 @@ return [
 				->setPriority(300)
 				->setIcon('fa fa-user-times'),
 		]
-	]
+	],
+	[
+		'title' => 'Страницы',
+		'icon'  => 'fa fa-file-text-o',
+		'model' => \Modules\Pages\Models\Page::class,
+	],
 	// Examples
 	// [
 	//    'title' => 'Content',
