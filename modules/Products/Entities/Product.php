@@ -12,4 +12,9 @@ class Product extends Model
 	{
 		return $this->belongsTo(Category::class);
 	}
+
+	public function attributes()
+	{
+		return $this->belongsToMany(Attribute::class)->withPivot('value');
+	}
 }

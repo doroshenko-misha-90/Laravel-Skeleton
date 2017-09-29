@@ -10,7 +10,7 @@
 
 namespace Modules\Users\Models{
 /**
- * Modules\Users\Entities\User
+ * Modules\Users\Models\User
  *
  * @property int $id
  * @property string $name
@@ -37,7 +37,7 @@ namespace Modules\Users\Models{
 
 namespace Modules\Users\Models{
 /**
- * Modules\Users\Entities\Permission
+ * Modules\Users\Models\Permission
  *
  * @property int $id
  * @property string $name
@@ -58,7 +58,7 @@ namespace Modules\Users\Models{
 
 namespace Modules\Users\Models{
 /**
- * Modules\Users\Entities\Role
+ * Modules\Users\Models\Role
  *
  * @property int $id
  * @property string $name
@@ -75,5 +75,69 @@ namespace Modules\Users\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Users\Models\Role whereUpdatedAt($value)
  */
 	class Role extends \Eloquent {}
+}
+
+namespace Modules\Products\Entities{
+/**
+ * Modules\Products\Entities\Attribute
+ *
+ * @property int $id
+ * @property string $name
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Products\Entities\Product[] $products
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Attribute whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Attribute whereName($value)
+ */
+	class Attribute extends \Eloquent {}
+}
+
+namespace Modules\Products\Entities{
+/**
+ * Modules\Products\Entities\Category
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $slug
+ * @property int $order
+ * @property int $parent_id
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Products\Entities\Product[] $products
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Category whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Category whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Category whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Category whereOrder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Category whereParentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Category whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Category whereUpdatedAt($value)
+ */
+	class Category extends \Eloquent {}
+}
+
+namespace Modules\Products\Entities{
+/**
+ * Modules\Products\Entities\Product
+ *
+ * @property int $id
+ * @property int $category_id
+ * @property string $name
+ * @property string $slug
+ * @property string $img
+ * @property int $price
+ * @property string $status
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Products\Entities\Attribute[] $attributes
+ * @property-read \Modules\Products\Entities\Category $category
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Product whereCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Product whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Product whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Product whereImg($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Product whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Product wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Product whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Product whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Products\Entities\Product whereUpdatedAt($value)
+ */
+	class Product extends \Eloquent {}
 }
 
