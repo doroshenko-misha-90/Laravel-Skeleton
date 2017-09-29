@@ -27,7 +27,6 @@ return [
 		'icon'  => 'fa fa-dashboard',
 		'url'   => route('admin.dashboard'),
 	],
-
 	[
 		'title' => 'Information',
 		'icon'  => 'fa fa-exclamation-circle',
@@ -45,6 +44,17 @@ return [
 			(new Page(Modules\Users\Models\Permission::class))
 				->setPriority(300)
 				->setIcon('fa fa-user-times'),
+		]
+	],
+	[
+		'title' => 'Shop',
+		'pages' => [
+			(new Page(\Modules\Products\Entities\Category::class))
+				->setPriority(100),
+			(new Page(\Modules\Products\Entities\Product::class))
+				->setPriority(200),
+			(new Page(\Modules\Products\Entities\Attribute::class))
+				->setPriority(300),
 		]
 	]
 	// Examples

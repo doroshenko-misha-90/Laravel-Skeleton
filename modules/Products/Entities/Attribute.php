@@ -12,6 +12,11 @@ class Attribute extends Model
 
     public function products()
     {
-    	return $this->belongsToMany(Product::class)->withPivot('value');
+    	return $this->belongsToMany(Product::class);
+    }
+
+    public function value()
+    {
+    	return $this->hasMany(AttributeValue::class);
     }
 }
