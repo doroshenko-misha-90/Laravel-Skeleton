@@ -1,5 +1,7 @@
 <?php
 
+use \App\Traits\LanguageTrait;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +13,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('set-locale/{lang}', 'SwitchLanguageController')->name('set_locale');
+
+Route::group(['prefix' => LanguageTrait::getPrefix()], function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
