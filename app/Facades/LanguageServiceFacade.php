@@ -3,7 +3,6 @@
 namespace App\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use App\Models\Language;
 
 class LanguageServiceFacade extends Facade
 {
@@ -21,10 +20,15 @@ class LanguageServiceFacade extends Facade
     public static function getPrefix()
     {
         $segment = request()->segment(1);
-        if (isset($segment) && isset(Language::getPrefixes()[$segment])) {
+        if (isset($segment) && isset(self::getPrefixes()[$segment])) {
             return $segment;
         }
 
         return null;
+    }
+
+    public static function getPrefixes()
+    {
+        return config('languages');
     }
 }
